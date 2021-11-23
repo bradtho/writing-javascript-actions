@@ -9,14 +9,14 @@ async function run() {
 
         const octokit = github.getOctokit(token);
 
-        const newIssue = await octokit.issues.create({
+        const newIssue = await octokit.rest.issues.create({
             repo: github.context.repo.repo,
             owner: github.context.repo.owner,
             title: issueTitle,
             body: jokeBody
         });
-    } catch (err) {
-        core.setFailed(err.message);
+    } catch (error) {
+        core.setFailed(error.message);
     }
 }
 
