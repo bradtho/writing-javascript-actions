@@ -10,6 +10,7 @@ name: JS Actions
 #   # pull_request:
 #   #   branches: [ main ]
 on:
+  workflow_dispatch:
   pull_request:
     types: [labeled]
 
